@@ -1,0 +1,61 @@
+{
+  "name": "ui-toolkit",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "test": "jest --coverage",
+    "prebuild": "rimraf ./packages/*/dist",
+    "build": "npx lerna exec --parallel -- babel --root-mode upward src -d dist --ignore src/__tests__/,src/__stories__/",
+    "bootstrap": "lerna bootstrap",
+    "publish-packages": "lerna publish",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "private": true,
+  "dependencies": {
+    "@babel/cli": "^7.16.0",
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.4",
+    "@babel/preset-react": "^7.16.0",
+    "@babel/runtime": "^7.16.3",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.3.0",
+    "babel-eslint": "10.1.0",
+    "eslint": "7.17.0",
+    "eslint-config-prettier": "7.1.0",
+    "eslint-config-react": "1.1.7",
+    "eslint-plugin-import": "2.22.1",
+    "eslint-plugin-jsx-a11y": "6.4.1",
+    "eslint-plugin-prettier": "3.3.0",
+    "eslint-plugin-react": "7.22.0",
+    "eslint-plugin-react-hooks": "4.2.0",
+    "eslint-plugin-testing-library": "3.9.2",
+    "husky": "^7.0.4",
+    "jest": "^28.1.1",
+    "jest-environment-jsdom": "^28.1.1",
+    "lint-staged": "11.2.6",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "tailwindcss-classnames": "^3.0.5"
+  },
+  "devDependencies": {
+    "@storybook/addon-actions": "^6.4.17",
+    "@storybook/addon-docs": "^6.4.17",
+    "@storybook/addon-essentials": "^6.4.17",
+    "@storybook/addon-interactions": "^6.5.9",
+    "@storybook/addon-links": "^6.4.17",
+    "@storybook/addon-postcss": "^2.0.0",
+    "@storybook/addons": "^6.4.17",
+    "@storybook/builder-webpack4": "^6.5.9",
+    "@storybook/html": "^6.4.22",
+    "@storybook/manager-webpack4": "^6.5.9",
+    "@storybook/testing-library": "^0.0.13",
+    "@storybook/theming": "^6.4.17",
+    "autoprefixer": "^10.4.7",
+    "babel-loader": "^8.2.5",
+    "lerna": "^5.1.4",
+    "postcss": "^8.4.14",
+    "tailwindcss": "^3.1.4"
+  }
+}
